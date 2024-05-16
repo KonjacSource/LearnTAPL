@@ -76,7 +76,6 @@ tySubst name t (Forall x t1) | name == x = Forall x t1 -- shadowed
                              | otherwise = Forall x $ tySubst name t t1
 tySubst _ _ IntTy = IntTy
 
--- reverse rule
 type TyRule = Term -> ContextM Ty
 
 tInt :: TyRule
